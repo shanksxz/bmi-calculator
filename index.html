@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./main.js"></script>
+
+    <!-- fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app" class="flex min-h-screen text-white bg-primary_gray">
+      <section
+        class="w-2/3 content min-h-screen flex flex-col justify-center items-center"
+      >
+        <div
+          class="grid active content-div grid-cols-[200px_200px] place-items-center"
+        >
+          <div class="grid place-items-center">
+            <h1 class="text-primary_green">Select Height</h1>
+            <div>
+              <span class="ff text-[4rem]">0</span>
+              cm
+            </div>
+          </div>
+          <div class="grid h-[600px] relative content-center justify-center">
+            <div class="relative h-[100px] w-[500px]">
+              <input
+                class="h-[100px] px-7 rotate-90 w-[550px]"
+                data-t="height"
+                type="range"
+                required
+                min="130"
+                value="130"
+                max="230"
+                step="1"
+              />
+            </div>
+            <div class="scale text-white rotate-90 height-scale">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col content-div justify-center items-center gap-5"
+        >
+          <h1 class="text-primary_green text-[2rem]">Select Weight</h1>
+          <div><span class="text-[4rem] mb-5 ff">0</span>kg</div>
+          <div class="">
+            <input
+              class="h-[100px] w-[500px]"
+              data-t="weight"
+              type="range"
+              required
+              min="50"
+              value="50"
+              max="150"
+              step="1"
+            />
+            <div class="flex justify-between text-white weight-scale">
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute content-btn bottom-0 left-0 text-white text-[2rem] z-10 w-2/3 flex justify-between px-52 pb-20"
+        >
+          <button
+            id="prev"
+            class="text-primary_green bg-secondary_gray px-6 py-3 rounded-md"
+          >
+            Prev
+          </button>
+          <button
+          id="next"
+          class="bg-primary_green px-6 py-3 text-white rounded-md"
+          >
+          Next
+        </button>
+      </div>
+      
+      <button id="submit" class="">Submit</button>
+        <div id="res" class="absolute bg-[#1c2c34] rounded-md w-2/3 -bottom-20 h-0 z-10 p-10">
+          <img src="./public//assets/close.svg" class="float-right fill-white cursor-pointer" alt="">
+          <div class="res-info">
+
+          </div>
+        </div>
+      </section>
+      <section class="w-1/3 bg-black"></section>
+    </div>
+  </body>
+</html>
