@@ -61,7 +61,6 @@ document.querySelector('#submit').addEventListener('click', (e) => {
 })
 
 document.querySelector('#submit').addEventListener('click', (e) => {
-  console.log("hdfbvh")
   document.querySelector('#res').classList.toggle('active');
 })
 document.querySelectorAll("input[type='range']").forEach((el, index) => {
@@ -100,12 +99,3 @@ document.querySelector('#res > button').addEventListener('click', (e) => {
   document.querySelector('#res').classList.toggle('active');
 })
 
-
-// document.getElementById('get-started').addEventListener('click', (e) => {
-//   document.getElementById('intro').style.display = 'none';
-// })
-
-// document.querySelector('.switch').addEventListener('click', (e) => {
-//   // toggle theme
-//   document.documentElement.classList.toggle('t');
-// })

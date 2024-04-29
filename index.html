@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="./main.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +19,6 @@
       <section
         class="w-full relative content min-h-screen flex flex-col justify-center items-center"
       >
-        <!-- Bars -->
-        <!-- <div class="m-5 switch absolute w-8 h-8 rounded-md border-border bg-gradient top-0 right-0 hover:cursor-pointer"> -->
-        <!-- <img src="./public/assets/switch.svg" class="w-10" alt="" /> -->
-        <!-- </div> -->
-
         <!-- Intro Page -->
         <div
           class="p-5 w-[600px] rounded-md border border-border flex flex-col justify-center active items-center gap-5 content-div content-btn"
@@ -148,25 +140,6 @@
             Submit
           </button>
         </div>
-
-        <!-- <div
-          class="absolute content-btn bottom-0 left-0 text-white text-[2rem] z-10 w-2/3 flex justify-between px-52 pb-20"
-        >
-          <button
-            id="prev"
-            class="text-primary_green bg-secondary_gray px-6 py-3 rounded-md"
-          >
-            Prev
-          </button>
-          <button
-            id="next"
-            class="bg-primary_green px-6 py-3 text-white rounded-md"
-          >
-            Next
-          </button>
-        </div> -->
-
-        <!-- <button id="submit" class="">Submit</button> -->
         <div
           id="res"
           class="absolute bg-card rounded-md w-[600px] top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 h-[600px] z-10 p-10"
@@ -211,5 +184,6 @@
         </div>
       </section>
     </div>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
