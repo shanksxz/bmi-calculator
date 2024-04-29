@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,18 +8,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary_green: "#e0ddaa",
-        primary_red: "#ff5f5f"
+        gradient: "var(--gradient)",
+        backrgound: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: "hsl(var(--card))",
+        card_foreground: "hsl(var(--card-foreground))",
+        input: "hsl(var(--input))",
+        primary: "hsl(var(--primary))",
+        secondary: "hsl(var(--secondary))",
+        accent: "hsl(var(--accent))",
+        border: "hsl(var(--border))",
       },
-      backgroundColor: {
-        primary_green: "#e0ddaa",
-        primary_gray: "#141e27",
-        secondary_gray : "#203239",
-        primary_red: "#ff5f5f"
-      },
-      borderColor: {
-        primary_green: "#0cd174"
-      }
     },
   },
   plugins: [],

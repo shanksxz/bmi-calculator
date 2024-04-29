@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="t">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -7,6 +7,7 @@
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="./main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,55 +18,102 @@
     />
   </head>
   <body>
-    <div id="app" class="flex min-h-screen text-white bg-primary_gray">
+    <div id="app" class="flex min-h-screen text-white bg-backrgound">
       <section
-        class="w-2/3 content min-h-screen flex flex-col justify-center items-center"
+        class="w-full relative content min-h-screen flex flex-col justify-center items-center"
       >
+        <!-- Bars -->
+        <!-- <div class="m-5 switch absolute w-8 h-8 rounded-md border-border bg-gradient top-0 right-0 hover:cursor-pointer"> -->
+        <!-- <img src="./public/assets/switch.svg" class="w-10" alt="" /> -->
+        <!-- </div> -->
+
+        <!-- Intro Page -->
         <div
-          class="grid active content-div grid-cols-[200px_200px] place-items-center"
+          class="p-5 w-[600px] rounded-md border border-border flex flex-col justify-center active items-center gap-5 content-div content-btn"
         >
-          <div class="grid place-items-center">
-            <h1 class="text-primary_green">Select Height</h1>
-            <div>
-              <span class="ff text-[4rem]">0</span>
-              cm
+          <h1 class="text-[2rem] text-gradient">
+            BMI Calculator: Discover Your Body Mass Index Easily
+          </h1>
+          <p>
+            Maintaining a healthy body mass index (BMI) is crucial for overall
+            well-being and longevity. Our user-friendly BMI calculator is
+            designed to empower you on your journey towards a healthier
+            lifestyle. With just a few simple inputs, you can instantly
+            determine your BMI and gain valuable insights into your body
+            composition.
+          </p>
+          <button
+            data-btn="next"
+            id="get-started"
+            class="bg-accent px-3 py-2 rounded-md w-full"
+          >
+            Get Start
+          </button>
+        </div>
+
+        <!-- SlideShow Pages -->
+
+        <div
+          class="w-[600px] h-[600px] rounded-md relative flex flex-col content-btn content-div justify-center border border-border p-10 pb-20 items-center gap-5"
+        >
+          <button data-btn="prev">
+            <img
+              src="./public/assets/left.svg"
+              class="absolute top-0 left-0 p-2 w-16 hover:cursor-pointer"
+              alt=""
+            />
+          </button>
+          <h1 class="text-primary_green text-[2rem]">Select Height</h1>
+          <div><span class="text-[4rem] mb-5 ff">0</span>cm</div>
+          <div class="relative">
+            <input
+              class="h-[100px] w-[500px]"
+              data-t="height"
+              type="range"
+              required
+              min="130"
+              value="130"
+              max="230"
+              step="1"
+            />
+            <div
+              class="flex justify-between absolute top-7 w-full height-scale"
+            >
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
+              <span class="fspan"></span>
             </div>
           </div>
-          <div class="grid h-[600px] relative content-center justify-center">
-            <div class="relative h-[100px] w-[500px]">
-              <input
-                class="h-[100px] px-7 rotate-90 w-[550px]"
-                data-t="height"
-                type="range"
-                required
-                min="130"
-                value="130"
-                max="230"
-                step="1"
-              />
-            </div>
-            <div class="scale text-white rotate-90 height-scale">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
+
+          <button
+            data-btn="next"
+            class="absolute bottom-10 bg-card text-gradient w-[500px] py-3 rounded-md"
+          >
+            Next
+          </button>
         </div>
 
         <div
-          class="flex flex-col content-div justify-center items-center gap-5"
+          class="w-[600px] h-[600px] rounded-md relative flex flex-col content-btn content-div justify-center border border-border p-10 pb-20 items-center gap-5"
         >
+          <button data-btn="prev">
+            <img
+              src="./public/assets/left.svg"
+              class="absolute top-0 left-0 p-2 w-16 hover:cursor-pointer"
+              alt=""
+            />
+          </button>
           <h1 class="text-primary_green text-[2rem]">Select Weight</h1>
           <div><span class="text-[4rem] mb-5 ff">0</span>kg</div>
-          <div class="">
+          <div class="relative">
             <input
               class="h-[100px] w-[500px]"
               data-t="weight"
@@ -76,7 +124,9 @@
               max="150"
               step="1"
             />
-            <div class="flex justify-between text-white weight-scale">
+            <div
+              class="flex justify-between absolute top-7 w-full text-white weight-scale"
+            >
               <span class="fspan"></span>
               <span class="fspan"></span>
               <span class="fspan"></span>
@@ -90,9 +140,16 @@
               <span class="fspan"></span>
             </div>
           </div>
+
+          <button
+            id="submit"
+            class="absolute bottom-10 bg-card text-gradient w-[500px] py-3 rounded-md"
+          >
+            Submit
+          </button>
         </div>
 
-        <div
+        <!-- <div
           class="absolute content-btn bottom-0 left-0 text-white text-[2rem] z-10 w-2/3 flex justify-between px-52 pb-20"
         >
           <button
@@ -102,22 +159,57 @@
             Prev
           </button>
           <button
-          id="next"
-          class="bg-primary_green px-6 py-3 text-white rounded-md"
+            id="next"
+            class="bg-primary_green px-6 py-3 text-white rounded-md"
           >
-          Next
-        </button>
-      </div>
-      
-      <button id="submit" class="">Submit</button>
-        <div id="res" class="absolute bg-[#1c2c34] rounded-md w-2/3 -bottom-20 h-0 z-10 p-10">
-          <img src="./public//assets/close.svg" class="float-right fill-white cursor-pointer" alt="">
-          <div class="res-info">
+            Next
+          </button>
+        </div> -->
 
+        <!-- <button id="submit" class="">Submit</button> -->
+        <div
+          id="res"
+          class="absolute bg-card rounded-md w-[600px] top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 h-[600px] z-10 p-10"
+        >
+          <button class="float-right">
+            <img
+              src="./public//assets/close.svg"
+              class="float-right fill-white cursor-pointer"
+              alt=""
+            />
+          </button>
+          <div class="res-info flex flex-col justify-center items-center">
+            <div class="flex items-baseline gap-5 justify-center">
+              <p class="text-[2rem]">Your BMI is</p>
+              <h1 class="text-[4rem] res-h text-gradient font-bold">29.9</h1>
+            </div>
+            <div class="flex gap-1 mt-10 w-full">
+              <div class="relative w-1/3 h-2 rounded-sm bg-blue-500">
+                <span class="absolute bottom-2">18.5</span>
+                <span class="text-blue-500 absolute top-2">Normal</span>
+              </div>
+              <div class="relative w-1/3 h-2 rounded-sm bg-green-500">
+                <span class="absolute bottom-2 -left-2">25</span>
+                <span class="text-green-500 absolute top-2">Overweight</span>
+              </div>
+              <div class="relative w-1/3 h-2 rounded-sm bg-yellow-500">
+                <span class="absolute bottom-2 -left-2">30</span>
+                <span class="text-yellow-500 absolute top-2">Obese</span>
+              </div>
+              <div class="relative w-1/3 h-2 rounded-sm bg-orange-500">
+                <span class="absolute bottom-2 -left-2">35</span>
+                <span class="absolute bottom-2 right-0">35+</span>
+                <span class="text-orange-500 absolute top-2"
+                  >Extremely Obese</span
+                >
+              </div>
+            </div>
+            <div class="mt-20 bg-accent rounded-md">
+              <p class="res-para p-5"></p>
+            </div>
           </div>
         </div>
       </section>
-      <section class="w-1/3 bg-black"></section>
     </div>
   </body>
 </html>
